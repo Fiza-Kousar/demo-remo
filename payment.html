@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Motor Service</title>
+  <style>
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: #000;
+}
+
+      .text{
+    margin-top: 45vh;
+    flex: 1;
+}
+
+.box{
+    margin-top: 26vh;
+    flex: 1;
+}
+
+.text{
+    margin-left: 10%;
+    font-weight: 300px;
+}
+
+.box{
+    margin-left: 300%;
+}
+
+.text h1{
+    font-size: 70px;
+    color: #000;
+    font-weight: 500;
+}
+
+.text p{
+    font-size: 20px;
+    color: #000;
+    font-weight: 300;
+}
+
+.text p a{
+    color:#000;
+	font-weight: 700;
+}
+::placeholder {
+    color: white;
+}
+
+.form{
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.address,.dte,.phno,.total, .fullname{
+    border-bottom: 1px solid #fff;
+}
+
+.button{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+}
+.back{
+    display: block;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300px;
+    
+}
+
+.button:hover{
+    background: #fff;
+    color: #000;
+}
+  </style>
+  
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'><link rel="stylesheet" href="./stylee.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="background">
+  <div class="navbar-component">
+    <!-- Class `area` is a container -->
+    <div class="navbar area">
+      <!-- Logo -->
+      <a href="#" class="brand">Online Motor Service</a>
+      <!-- List of links -->
+      <nav role="navigation" id="navigation" class="list">
+        <a href="index.html" class="item -link" style="color: white;">Home</a>
+        <a href="about.html" class="item -link" style="color: white;" >About</a>
+        
+        <a href="pservice.html" class="item -link" style="color: white;">Periodic service</a>
+        <a href="payment.html" class="item -link" style="color: white;" >Payment</a>
+        <a href="login.html" class="item -link" style="color: white;">Login/Register</a>
+
+       
+      </nav>
+      <!-- Button to toggle the display menu  -->
+      <button data-collapse data-target="#navigation" class="toggle">
+        <!-- Hamburger icon -->
+        <span class="icon"></span>
+      </button>
+    </div>
+  </div>
+  <main>
+    <div class="background">
+        
+        <div class="box">
+            <form class="form">
+                <input type="text" class="fullname" placeholder="Full Name" required pattern="[A-Z][a-z]+">
+                <input type="number" class="phno" placeholder="Mobile Number" required  pattern="/^[6-9]\d{9}$/">
+                <input type="text" class="address" placeholder="Address" required>
+                <input type="date" class="dte" name="date" id="date" required> 
+                <select name="time slot" placeholder="Select the time slot" required>
+                    <option value="time1">9:00 AM TO 11:00AM</option>
+                    <option value="time1">12:00 PM TO 02:00PM</option>
+                    <option value="time1">03:00 PM TO 05:00PM</option>
+                </select>
+              
+                <input type="text" class="total" placeholder="Total Amount" readonly="readonly" required><br>
+                <input type="submit" class="button" id="demo" value="Confirm" onclick="myFunction()">
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    function myFunction() {
+      var txt;
+      var r = confirm("Confirm!");
+      if (r == true) {
+        txt = "You payment is confirmed!";
+      } else {
+        txt = "Cancelled !";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    }
+    </script>
+
+  
+    
+</body>
+</html>

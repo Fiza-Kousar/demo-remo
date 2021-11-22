@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+   <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">-->
+</head>
+<body>
+    <main>
+        <div class="background">
+            <div class="back">
+                <a href="index.html">Home<a>
+         </div>
+            <div class="text">
+                <h1>Login</h1>
+                <p>No Account? <a href="signup.html">Sign up</a></p>
+            </div>
+            <div class="box">
+                <form class="form">
+                    <input type="text" class="fullname" placeholder="Full name" id="name" required pattern="[A-Za-z\s]+" >
+                    <input type="password" class="password" placeholder="Password" id="pwd" pattern="(?.*\d)(?.*[a-z])(?.*[A-Z]).{4,}" required>
+                    <input type="submit" class="button" onsubmit="check()" value="Login">
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+       function check(){
+         var n=document.getElementById('name');
+         n.addEventListener('input',() =>{
+         n.setCustomValidity('');
+        n.checkValidity();
+  });
+  n.addEventListener('invalid',()=>{
+    if(n.value==''){
+      n.setCustomValidity('Enter first name');
+    }
+    else{
+      n.setCustomValidity('Name can contain only have uppercase or lower case letters ');
+    }
+  });
+  var n=document.getElementById('pwd');
+  n.addEventListener('input',() =>{
+    n.setCustomValidity('');
+    n.checkValidity();
+  });
+  n.addEventListener('invalid',()=>{
+    if(n.value==''){
+      n.setCustomValidity('Enter password');
+    }
+    else{
+      n.setCustomValidity('+-/* cant be used');
+    }
+  });
+}
+
+   </script>
+    
+</body>
+</html>

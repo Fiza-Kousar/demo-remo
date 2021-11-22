@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Motor Service</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'><link rel="stylesheet" href="./stylee.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="background">
+  <div class="navbar-component">
+    <!-- Class `area` is a container -->
+    <div class="navbar area">
+      <!-- Logo -->
+      <a href="#" class="brand">Online Motor Service</a>
+      <!-- List of links -->
+      <nav role="navigation" id="navigation" class="list">
+        <a href="index.html" class="item -link" style="color: white;">Home</a>
+        <a href="about.html" class="item -link" style="color: white;" >About</a>
+        <a href="pservice.html" class="item -link" style="color: white;">Periodic service</a>
+        <a href="payment.html" class="item -link" style="color: white;" >Payment</a>
+
+        <a href="login.html" class="item -link" style="color: white;">Login/Register</a>
+
+       
+      </nav>
+      <!-- Button to toggle the display menu  -->
+      <button data-collapse data-target="#navigation" class="toggle">
+        <!-- Hamburger icon -->
+        <span class="icon"></span>
+      </button>
+    </div>
+  </div>
+  
+   <form>
+    <div class="container">
+      <div class="row main-box">
+          <div class="col-md-5 service-box" style="background-color: white;">
+              <div class="row">
+                  <div class="col-md-6 myimg-box-1">
+                      <img src="motorbike.png" alt="">
+                  </div>
+                  <div class="col-md-6 service-title">
+                      <h3 class="text-center "> Complete bike Service</h3>
+                      <p><b>Service at your doorstep</b><br>
+                        <b>This service includes</b>
+                        <ul>
+                          <li>oil service</li>
+                          <li>Water service</li>
+                          <li>ABS service</li>
+                        </ul>
+                      <input name="product" value="1999.00" type="checkbox" onclick="totalIt()"/>Rs.1999.00/-</p>
+                     
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-5 service-box" style="background-color: white;">
+            <div class="row">
+              <div class="col-md-6 myimg-box-1">
+                <img src="oil-bottle.png" alt="">
+              </div>
+              <div class="col-md-6 service-title">
+                <h3 class="text-center ">Oil Service</h3>
+                <p><b>Service at your doorstep</b><br>
+                <input name="product" value="999.00" type="checkbox" onclick="totalIt()"/>Rs.999.00/-</p>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 service-box" style="background-color: white;">
+            <div class="row">
+              <div class="col-md-6 myimg-box-1">
+                <img src="motorbike.png" alt="">
+              </div>
+              <div class="col-md-6 service-title">
+                <h3 class="text-center ">Water Service</h3>
+                <p><b>Service at your doorstep</b><br>
+                  <input name="product" value="499.00" type="checkbox" onclick="totalIt()"/>Rs.499.00/-</p>
+               
+              </div>
+            </div>
+            <div class="col-md-10 service-box" style="background-color: white;">
+              <input value="Total = RS.0.00" readonly="readonly" type="text" id="total"/>
+              <button onclick="showAlert();store();">Confirm</button> 
+          </div>
+          
+      </div>
+    </div>  
+  </form>
+    <script type="text/javascript">
+      var total =0;
+      function totalIt()
+      {
+     var input = document.getElementsByName("product");
+     for (var i = 0; i < input.length; i++)
+     {
+        if (input[i].checked)
+        {
+           total += parseFloat(input[i].value);
+        }
+     }
+     document.getElementById("total").value = "Rs." + total.toFixed(2);
+    }
+     function showAlert() {
+      var a= "Your total amount is "+total.toFixed(2);
+                alert (a);
+              }
+  /*<!--function local(){
+    var a= {
+      totalamt:document.getElementById("total")
+    }
+    window.localStorage.setItem('user', JSON.stringify(a));
+  }*/
+  function store()
+{
+    var total=document.getElementById("total");
+    localStorage.setItem("total",total.value );
+}
+  
+     
+  </script> 
+<!-- partial
+  <script  src="./script.js"></script>-->
+
+</body>
+</html>

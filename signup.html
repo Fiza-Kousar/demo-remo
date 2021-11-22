@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">-->
+</head>
+<body>
+    <main>
+        <div class="background">
+            <div class="back">
+                <a href="index.html">Home<a>
+         </div>
+            <div class="text">
+                <h1>Signup</h1>
+                <p>Have Account? <a href="login.html">Login</a></p>
+            </div>
+            <div class="box">
+                <form class="form" name="myForm">
+                    <input type="text" class="fullname" id="name" placeholder="Full Name" required pattern="[A-Za-z\s]+">
+                    <input type="email" class="email" placeholder="Enter Email" id="mail" name="mail" >
+                    <input id="id1" class="age"type="number" placeholder="Age" min="18" max="70" required>           
+                    <input type="text" name="mobile" class="phno"  placeholder="Mobile number" pattern="[1-9]{1}[0-9]{9}"  required>
+                    <input type="password" id="password1" class="p1"placeholder="Password" pattern="(?.*\d)(?.*[a-z])(?.*[A-Z]).{4,}" required/>
+	                <input type="password" id="password2" class="p2"placeholder="Confirm password" pattern="(?.*\d)(?.*[a-z])(?.*[A-Z]).{4,}" required/>
+                             
+                    
+                    <input type="submit" class="button" onclick="func()" value="Login">
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+         function func(){ 
+                    const nameInput = document.querySelector('input');
+                    nameInput.addEventListener('input', () => {
+                        nameInput.setCustomValidity('');
+                        nameInput.checkValidity();
+                    });
+                    nameInput.addEventListener('invalid', () => {
+                    if(nameInput.value === '') {
+                    nameInput.setCustomValidity('Enter your username!');
+                    } else {
+                    nameInput.setCustomValidity('Usernames can only contain upper and lowercase letters. Try again!');
+                    }});
+
+                    const email = document.getElementById("mail");
+                    email.addEventListener("input", function (event) {
+                    if (email.validity.typeMismatch) {
+                        email.setCustomValidity(" expecting an e-mail address!");
+                    }
+                     else {
+                        email.setCustomValidity("dosen't match the pattern");
+                    }
+                        });
+
+                    const p1= document.getElementById("password1");
+                    p1.addEventListener("input", function (event) {
+                    if (p1.validity.typeMismatch) {
+                        p1.setCustomValidity(" expecting an password!");
+                    }
+                     else {
+                        p1.setCustomValidity("should contain atleast1 special symbol UC LC ");
+                    }
+                        });
+                    
+                        const p2 = document.getElementById("password2");
+                    email.addEventListener("input", function (event) {
+                    if (p2.validity.typeMismatch) {
+                        p2.setCustomValidity(" expecting an password!");
+                    }
+                     else {
+                        p2.setCustomValidity("should contain atleast1 special symbol UC LC ");
+                    }
+                        });
+
+                    
+
+                    document.getElementById("password1").onchange = validatePassword;
+	                document.getElementById("password2").onchange = validatePassword;
+                    function validatePassword(){
+                    var pass2=document.getElementById("password2").value;
+                    var pass1=document.getElementById("password1").value;
+                        if(pass1!=pass2){
+	                        document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                        }
+                        else{
+	                        document.getElementById("password2").setCustomValidity('');
+                        }	 
+//empty string means no validation error
+                    }
+                }
+    </script>
+</body>
+</html>

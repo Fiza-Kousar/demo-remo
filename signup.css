@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: #000;
+}
+
+.background{
+    background: url(jsa2.jpg) no-repeat;
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+}
+
+.text{
+    margin-top: 45vh;
+    flex: 1;
+}
+
+.box{
+    margin-top: 26vh;
+    flex: 1;
+}
+
+.text{
+    margin-left: 10%;
+    font-weight: 300px;
+}
+
+.box{
+    margin-left: 25%;
+}
+
+.text h1{
+    font-size: 70px;
+    color: #000;
+    font-weight: 500;
+}
+
+.text p{
+    font-size: 20px;
+    color: #000;
+    font-weight: 300;
+}
+
+.text p a{
+    color:#000;
+	font-weight: 700;
+}
+::placeholder {
+    color: white;
+}
+
+.form{
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.age,.p1,.p2,.phno,.password, .fullname, .email{
+    border-bottom: 1px solid #fff;
+}
+
+.button{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+}
+.back{
+    display: block;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300px;
+    
+}
+
+.button:hover{
+    background: #fff;
+    color: #000;
+}
