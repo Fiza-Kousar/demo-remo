@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("hospital.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+   left: 50%;
+   bottom:10%;
+   top:50%;
+  transform: translate(-50%, -50%);
+  color: blue;
+}
+.container-fluid {
+  position: relative;
+  font-family: Arial;
+}
+.a:hover{
+    background:#fff;
+    color: #000;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  background-color:black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align:center;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  width: 500px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  background-color:black;
+}
+
